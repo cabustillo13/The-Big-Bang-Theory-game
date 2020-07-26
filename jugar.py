@@ -463,3 +463,6 @@ window = Window()
 # Run la app 
 sys.exit(App.exec()) 
  
+
+
+#Bibliografia: https://www.geeksforgeeks.org/pyqt5-rock-paper-and-scissor-game/
