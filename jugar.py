@@ -247,7 +247,7 @@ class Window(QMainWindow):
             self.computer.setText(str(self.counter)) 
 
             if self.counter == 0: 
-                self.comp_choice = random.randint(1, 3) 
+                self.comp_choice = random.randint(1, 5) 
 
                 # Si el CPU elige 1 
                 if self.comp_choice == 1: 
@@ -257,11 +257,19 @@ class Window(QMainWindow):
 
                 elif self.comp_choice == 2: 
                     # Asignar la imagen del papel al label del CPU 
-                    self.computer.setStyleSheet("border-image : url(Imagenes/papel.png);") 
+                    self.computer.setStyleSheet("border-image : url(Imagenes/papel.png);")
+                    
+                elif self.comp_choice == 3: 
+                    # Asignar la imagen de la tijera al label del CPU 
+                    self.computer.setStyleSheet("border-image : url(Imagenes/tijera.png);")
+                    
+                elif self.comp_choice == 4: 
+                    # Asignar la imagen del lagarto al label del CPU 
+                    self.computer.setStyleSheet("border-image : url(Imagenes/lagarto.png);")
 
                 else: 
-                    # Asignar la imagen de la tijera al label del CPU 
-                    self.computer.setStyleSheet("border-image : url(Imagenes/tijera.png);") 
+                    # Asignar la imagen de spock al label del CPU 
+                    self.computer.setStyleSheet("border-image : url(Imagenes/spock.png);") 
 
                 # Definir quien gano 
                 self.who_won() 
