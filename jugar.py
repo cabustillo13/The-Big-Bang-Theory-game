@@ -292,7 +292,9 @@ class Window(QMainWindow):
         # Deshabilitar el boton push 
         self.rock.setDisabled(True) 
         self.paper.setDisabled(True) 
-        self.scissor.setDisabled(True) 
+        self.scissor.setDisabled(True)
+        self.lagarto.setDisabled(True)
+        self.spock.setDisabled(True)
 
 # Metodo para la accion del papel
     def paper_action(self): 
@@ -310,6 +312,8 @@ class Window(QMainWindow):
         self.rock.setDisabled(True) 
         self.paper.setDisabled(True) 
         self.scissor.setDisabled(True) 
+        self.lagarto.setDisabled(True)
+        self.spock.setDisabled(True)
 
 # Metodo para la accion de la tijera
     def scissor_action(self): 
@@ -326,7 +330,47 @@ class Window(QMainWindow):
         # Deshabilitar el boton push 
         self.rock.setDisabled(True) 
         self.paper.setDisabled(True) 
-        self.scissor.setDisabled(True) 
+        self.scissor.setDisabled(True)
+        self.lagarto.setDisabled(True)
+        self.spock.setDisabled(True)
+
+# Metodo para la accion del lagarto
+    def lagarto_action(self): 
+
+        # Definir la eleccion como un 4 
+        self.choice = 4
+
+        # Asignar la imagen del lagarto al label del usuario 
+        self.user.setStyleSheet("border-image : url(Imagenes/lagarto.png);") 
+
+        # Haciendo el contador como 3 
+        self.counter = 3
+
+        # Deshabilitar el boton push 
+        self.rock.setDisabled(True) 
+        self.paper.setDisabled(True) 
+        self.scissor.setDisabled(True)
+        self.lagarto.setDisabled(True)
+        self.spock.setDisabled(True)
+
+# Metodo para la accion del spock
+    def spock_action(self): 
+
+        # Definir la eleccion como un 5 
+        self.choice = 5
+
+        # Asignar la imagen del spock al label del usuario 
+        self.user.setStyleSheet("border-image : url(Imagenes/spock.png);") 
+
+        # Haciendo el contador como 3 
+        self.counter = 3
+
+        # Deshabilitar el boton push 
+        self.rock.setDisabled(True) 
+        self.paper.setDisabled(True) 
+        self.scissor.setDisabled(True)
+        self.lagarto.setDisabled(True)
+        self.spock.setDisabled(True)
 
 # Metodo para la accion del reset
     def reset_action(self): 
