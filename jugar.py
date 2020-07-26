@@ -243,9 +243,14 @@ class Window(QMainWindow):
         # Sino es -1 
         else: 
 
-            # Asignar el valor del contador al label 
-            self.computer.setText(str(self.counter)) 
-
+            # Asignar el valor del contador al label
+            if (self.counter !=0):
+                self.computer.setText(str(self.counter))
+                self.user.setText("YO")
+            else:
+                self.computer.setText(" ")
+                self.user.setText(" ")
+                
             if self.counter == 0: 
                 self.comp_choice = random.randint(1, 5) 
 
