@@ -60,7 +60,7 @@ class Window(QMainWindow):
 
         # Definir el color de fuente del titulo de la imagen
         color = QGraphicsColorizeEffect(self) 
-        color.setColor(Qt.darkCyan) 
+        color.setColor(Qt.darkRed) 
         head.setGraphicsEffect(color) 
 
         ##############################
@@ -81,7 +81,7 @@ class Window(QMainWindow):
 
         # Definir el color de fuente del titulo de la imagen
         color = QGraphicsColorizeEffect(self) 
-        color.setColor(Qt.darkCyan) 
+        color.setColor(Qt.darkRed) 
         subhead.setGraphicsEffect(color)
         
         ############################
@@ -108,7 +108,7 @@ class Window(QMainWindow):
 
         # Definir el color de fuente del pie de la imagen
         color = QGraphicsColorizeEffect(self) 
-        color.setColor(Qt.darkCyan) 
+        color.setColor(Qt.darkRed) 
         footer.setGraphicsEffect(color)
         
         ###########################
@@ -116,15 +116,17 @@ class Window(QMainWindow):
         ###########################
 
         # Crear un label vrs para que se muestre en la pantalla 
-        self.vs = QLabel("vs", self) 
+        self.vs = QLabel("vrs", self) 
 
         # Definiendo la posicion del label vrs 
-        self.vs.setGeometry(150, 110, 30, 50) 
+        self.vs.setGeometry(145, 110, 30, 50) 
 
-        # Definiendo 
-        font.setUnderline(False) 
-        font.setItalic(False) 
-        self.vs.setFont(font) 
+        # Fuentes
+        fontvrs = QFont('Monospace', 12)
+        fontvrs.setBold(True)
+        fontvrs.setUnderline(False) 
+        fontvrs.setItalic(False) 
+        self.vs.setFont(fontvrs) 
 
         ###################################
         ## TICK MOSTRAR ELECCION USUARIO ##
@@ -165,7 +167,7 @@ class Window(QMainWindow):
         self.result.setGeometry(25, 200, 270, 50) 
 
         # Definir fuente 
-        self.result.setFont(QFont('Times', 14)) 
+        self.result.setFont(QFont('Monospace', 14)) 
 
         # Definir alineacion 
         self.result.setAlignment(Qt.AlignCenter) 
@@ -197,8 +199,8 @@ class Window(QMainWindow):
         self.rock.clicked.connect(self.rock_action) 
         self.paper.clicked.connect(self.paper_action) 
         self.scissor.clicked.connect(self.scissor_action) 
-        #self.lagarto.clicked.connect(self.lagarto_action)
-        #self.spock.clicked.connect(self.spock_clicked)
+        self.lagarto.clicked.connect(self.lagarto_action)
+        self.spock.clicked.connect(self.spock_clicked)
 
         #################
         ## BOTON RESET ##
