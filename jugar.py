@@ -384,7 +384,9 @@ class Window(QMainWindow):
         # Deshabilitar el boton push 
         self.rock.setEnabled(True) 
         self.paper.setEnabled(True) 
-        self.scissor.setEnabled(True) 
+        self.scissor.setEnabled(True)
+        self.lagarto.setEnabled(True)
+        self.spock.setEnabled(True)
 
         # Remover las imagenes del label del CPU y usuario 
         self.user.setStyleSheet("border-image : null;") 
