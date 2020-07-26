@@ -200,7 +200,7 @@ class Window(QMainWindow):
         self.paper.clicked.connect(self.paper_action) 
         self.scissor.clicked.connect(self.scissor_action) 
         self.lagarto.clicked.connect(self.lagarto_action)
-        self.spock.clicked.connect(self.spock_clicked)
+        self.spock.clicked.connect(self.spock_action)
 
         #################
         ## BOTON RESET ##
@@ -403,10 +403,11 @@ class Window(QMainWindow):
 
         else: 
             # Distintas situaciones para definir quien gana 
+            
             # El usuario elige piedra  
             if self.choice == 1: 
-                # CPU elige papel 
-                if self.comp_choice == 2: 
+                # CPU elige papel o spack
+                if (self.comp_choice == 2) or (self.comp_choice == 5): 
                     # Asignar texto a un label del resultado
                     self.result.setText("EL CPU GANÓ ¯\_(ツ)_/¯") 
                 else: 
@@ -414,8 +415,8 @@ class Window(QMainWindow):
 
             # El usuario elige papel 
             elif self.choice == 2: 
-                # CPU elige tijera 
-                if self.comp_choice == 3: 
+                # CPU elige tijera o lagarto
+                if (self.comp_choice == 3) or (self.comp_choice == 4): 
                     # Asignar texto a un label del resultado 
                     self.result.setText("EL CPU GANÓ ¯\_(ツ)_/¯") 
                 else: 
@@ -423,13 +424,31 @@ class Window(QMainWindow):
 
             # El usuario elige tijera 
             elif self.choice == 3: 
-                # CPU elige piedra 
-                if self.comp_choice == 1: 
+                # CPU elige spock o piedra
+                if (self.comp_choice == 5) or (self.comp_choice == 1): 
+                    # Asignar texto a un label del resultado 
+                    self.result.setText("EL CPU GANÓ ¯\_(ツ)_/¯") 
+                else: 
+                    self.result.setText("YO GANÉ")
+
+            # El usuario elige lagarto 
+            elif self.choice == 4 : 
+                # CPU elige piedra o tijera
+                if (self.comp_choice == 1)  or (self.comp_choice == 3): 
                     # Asignar texto a un label del resultado 
                     self.result.setText("EL CPU GANÓ ¯\_(ツ)_/¯") 
                 else: 
                     self.result.setText("YO GANÉ") 
-
+                    
+            # El usuario elige spock 
+            elif self.choice == 5 : 
+                # CPU elige piedra 
+                if (self.comp_choice == 2)  or (self.comp_choice == 4): 
+                    # Asignar texto a un label del resultado 
+                    self.result.setText("EL CPU GANÓ ¯\_(ツ)_/¯") 
+                else: 
+                    self.result.setText("YO GANÉ") 
+                    
 # Crear una app pyqt5  
 App = QApplication(sys.argv) 
 
